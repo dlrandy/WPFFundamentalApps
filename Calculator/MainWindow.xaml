@@ -15,6 +15,22 @@
         </StackPanel>
     </Grid>-->
 
+    <Window.Resources>
+        <!--
+        <SolidColorBrush x:Key="NumbersColor" Color="#444"></SolidColorBrush>
+        <SolidColorBrush x:Key="OperatorsColor" Color="Orange"></SolidColorBrush>
+        <SolidColorBrush x:Key="ForegroundColor" Color="White"></SolidColorBrush>
+        -->
+        <!--<Style TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="25"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="70"></Setter>
+        </Style>-->
+    </Window.Resources>
+
+
     <Grid>
         <!--Margin="10"-->
 
@@ -33,67 +49,74 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Content="0" 
+        <Label Content="0"
                Grid.ColumnSpan="4"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"
-               FontSize="60"
-               x:Name="ResultLabel"/>
+
+               x:Name="ResultLabel" />
         <Button Grid.Column="0" Content="AC"
                 Grid.Row="1"
-                Margin="5" 
-                x:Name="AcButton"/>
+               
+                Style="{StaticResource AdditionalButtonsStyle}"
+                x:Name="AcButton" />
         <Button
             Content="+/-"
             Grid.Row="1"
             Grid.Column="1"
-            Margin="5"
-            x:Name="NegativeButton"
-            />
+           
+            Style="{StaticResource AdditionalButtonsStyle}"
+            x:Name="NegativeButton" />
         <Button
             Content="%"
             Grid.Row="1"
             Grid.Column="2"
-            Margin="5" 
-            x:Name="PercentageButton"/>
+            Style="{StaticResource AdditionalButtonsStyle}"
+           
+            x:Name="PercentageButton" />
         <Button
             Content="/"
             Grid.Row="1"
             Grid.Column="3"
-            Margin="5" 
+          
             Click="OperationButton_OnClick"
-            x:Name="DivisionButton"/>
+            Background="{StaticResource OperatorsColor}"
+            x:Name="DivisionButton" />
 
         <Button Grid.Column="0" Content="7"
                 Grid.Row="2"
-                Margin="5" 
+                Style="{StaticResource NumberButtonStyle}"
+             
                 x:Name="SevenButton"
-                Click="SevenButton_OnClick"
-                />
+                Click="SevenButton_OnClick" />
         <Button
             Content="8"
             Grid.Row="2"
             Click="NumberButton_OnClick"
             Grid.Column="1"
-            Margin="5"
-            x:Name="EightButton"/>
+            Style="{StaticResource NumberButtonStyle}"
+           
+            x:Name="EightButton" />
         <Button
             Content="9"
             Click="NumberButton_OnClick"
             Grid.Row="2"
             Grid.Column="2"
-            Margin="5"
-            x:Name="NineButton"/>
+           
+            Style="{StaticResource NumberButtonStyle}"
+            x:Name="NineButton" />
         <Button
             Content="*"
             Grid.Row="2"
             Grid.Column="3"
             x:Name="MultiplicationButton"
             Click="OperationButton_OnClick"
-            Margin="5" />
+            Background="{StaticResource OperatorsColor}"
+            />
         <Button Grid.Column="0" Content="4"
                 Grid.Row="3"
                 x:Name="FourButton"
+                Background="{StaticResource NumbersColor}"
                 Click="NumberButton_OnClick"
                 Margin="5" />
         <Button
@@ -102,11 +125,13 @@
             Grid.Row="3"
             x:Name="FiveButton"
             Grid.Column="1"
+            Background="{StaticResource NumbersColor}"
             Margin="5" />
         <Button
             Content="6"
             Click="NumberButton_OnClick"
             Grid.Row="3"
+            Background="{StaticResource NumbersColor}"
             Grid.Column="2"
             x:Name="SixButton"
             Margin="5" />
@@ -115,10 +140,12 @@
             Grid.Row="3"
             Grid.Column="3"
             Click="OperationButton_OnClick"
+            Style="{StaticResource OperatorButtonStyle}"
             x:Name="MinusButton"
             Margin="5" />
         <Button Grid.Column="0" Content="1"
                 Grid.Row="4"
+                Background="{StaticResource NumbersColor}"
                 x:Name="OneButton"
                 Click="NumberButton_OnClick"
                 Margin="5" />
@@ -127,12 +154,14 @@
             Grid.Row="4"
             Grid.Column="1"
             x:Name="TwoButton"
+            Background="{StaticResource NumbersColor}"
             Click="NumberButton_OnClick"
             Margin="5" />
         <Button
             Content="3"
             Grid.Row="4"
             x:Name="ThreeButton"
+            Background="{StaticResource NumbersColor}"
             Grid.Column="2"
             Click="NumberButton_OnClick"
             Margin="5" />
@@ -141,6 +170,7 @@
             Grid.Row="4"
             Click="OperationButton_OnClick"
             x:Name="AdditionButton"
+            Background="{StaticResource OperatorsColor}"
             Grid.Column="3"
             Margin="5" />
 
@@ -148,6 +178,7 @@
                 Grid.Row="5"
                 Click="NumberButton_OnClick"
                 Grid.ColumnSpan="2"
+                Background="{StaticResource NumbersColor}"
                 x:Name="ZeroButton"
                 Margin="5" />
         <Button
@@ -155,13 +186,15 @@
             Grid.Row="5"
             Grid.Column="2"
             x:Name="PointButton"
+            Background="{StaticResource NumbersColor}"
             Margin="5" />
-      
+
         <Button
             Content="="
             Grid.Row="5"
             Grid.Column="3"
             x:Name="EqualButton"
+            Background="{StaticResource OperatorsColor}"
             Margin="5" />
     </Grid>
 </Window>
